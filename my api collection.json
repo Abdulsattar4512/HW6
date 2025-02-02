@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "2b5192c6-3b76-4c7f-8080-83bbc6cc1a63",
+		"name": "Get/items",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41556375"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/items",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>Abilities</th>\r",
+							"        <th>Base Experience</th>\r",
+							"        <th>Cries</th>\r",
+							"        <th>Forms</th>\r",
+							"        <th>Game Indices</th>\r",
+							"        <th>Height</th>\r",
+							"        <th>Held Items</th>\r",
+							"        <th>ID</th>\r",
+							"        <th>Is Default</th>\r",
+							"        <th>Location Area Encounters</th>\r",
+							"        <th>Moves</th>\r",
+							"        <th>Name</th>\r",
+							"        <th>Order</th>\r",
+							"        <th>Past Abilities</th>\r",
+							"        <th>Past Types</th>\r",
+							"        <th>Species</th>\r",
+							"        <th>Sprites</th>\r",
+							"        <th>Stats</th>\r",
+							"        <th>Types</th>\r",
+							"        <th>Weight</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    <tr>\r",
+							"        <td>{{abilities}}</td>\r",
+							"        <td>{{base_experience}}</td>\r",
+							"        <td>{{cries}}</td>\r",
+							"        <td>{{forms}}</td>\r",
+							"        <td>{{game_indices}}</td>\r",
+							"        <td>{{height}}</td>\r",
+							"        <td>{{held_items}}</td>\r",
+							"        <td>{{id}}</td>\r",
+							"        <td>{{is_default}}</td>\r",
+							"        <td>{{location_area_encounters}}</td>\r",
+							"        <td>{{moves}}</td>\r",
+							"        <td>{{name}}</td>\r",
+							"        <td>{{order}}</td>\r",
+							"        <td>{{past_abilities}}</td>\r",
+							"        <td>{{past_types}}</td>\r",
+							"        <td>{{species}}</td>\r",
+							"        <td>{{sprites}}</td>\r",
+							"        <td>{{stats}}</td>\r",
+							"        <td>{{types}}</td>\r",
+							"        <td>{{weight}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/items",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Item 3\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/items/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated Item 1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/items/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/items/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/items/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
